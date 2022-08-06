@@ -1,9 +1,11 @@
 <template>
   <div>
-    <nav class="space-x-4 mb-8 mx-auto flex justify-center items-center mt-4">
-      <router-link to="/layout/standard">Layout standard</router-link> |
-      <router-link to="/layout/auth">Layout auth</router-link>
-    </nav>
+    <div class="space-x-4 mb-8 mx-auto flex justify-center items-center mt-4">
+      <button @click.prevent="setLayout(LAYOUTS.standard)">
+        Layout standard
+      </button>
+      <button @click.prevent="setLayout(LAYOUTS.auth)">Layout auth</button>
+    </div>
     <layout-component class="mx-auto max-w-7xl">
       <template #header>
         <p>Header</p>
@@ -23,9 +25,17 @@
 
 <script>
 import LayoutComponent from "../layouts/LayoutComponent";
+import { setLayout, LAYOUTS } from "@/layouts/services/pageLayoutService";
+
 export default {
   components: {
     LayoutComponent,
+  },
+  methods: {
+    setLayout,
+  },
+  created() {
+    this.LAYOUTS = LAYOUTS;
   },
 };
 </script>

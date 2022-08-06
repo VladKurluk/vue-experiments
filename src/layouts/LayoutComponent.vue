@@ -13,18 +13,20 @@
 </template>
 
 <script>
+import { layoutComputed, LAYOUTS } from "./services/pageLayoutService.js";
 import StandardLayout from "./components/StandardLayout";
 import AuthLayout from "./components/AuthLayout";
+
 const layoutComponents = {
-  standard: StandardLayout,
-  auth: AuthLayout,
+  [LAYOUTS.standard]: StandardLayout,
+  [LAYOUTS.auth]: AuthLayout,
 };
+
 export default {
   computed: {
+    ...layoutComputed,
     currentLayoutComponent() {
-      const layout =
-        this.$router.currentRoute.value?.meta?.layout || "standard";
-      return layoutComponents[layout];
+      return layoutComponents[this.layout];
     },
   },
 };

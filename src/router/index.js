@@ -11,17 +11,11 @@ const routes = [
     path: "/layout/standard",
     name: "LayoutStandard",
     component: LayoutExample,
-    meta: {
-      layout: "standard",
-    },
   },
   {
     path: "/layout/auth",
     name: "Home",
     component: LayoutExample,
-    meta: {
-      layout: "auth",
-    },
   },
 ];
 
