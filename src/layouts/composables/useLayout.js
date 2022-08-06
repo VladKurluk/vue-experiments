@@ -1,4 +1,4 @@
-import { ref } from "vue";
+/* import { ref } from "vue";
 
 export const LAYOUTS = {
   standard: Symbol("standard"),
@@ -17,4 +17,15 @@ export const useLayout = () => {
     setLayout,
     LAYOUTS,
   };
+}; */
+
+// Make useLayout with useLayoutFactory
+import { useLayoutFactory } from "../helpers/useLayoutFactory.js";
+
+export const LAYOUTS = {
+  standard: Symbol("standard"),
+  auth: Symbol("auth"),
 };
+
+const { useLayout } = useLayoutFactory(LAYOUTS, LAYOUTS.standard);
+export { useLayout };
