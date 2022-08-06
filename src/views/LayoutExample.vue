@@ -24,18 +24,19 @@
 </template>
 
 <script>
-import LayoutComponent from "../layouts/LayoutComponent";
-import { setLayout, LAYOUTS } from "@/layouts/services/pageLayoutService";
+import LayoutComponent from "@/layouts/LayoutComponent";
+import { useLayout } from "@/layouts/composables/useLayout";
 
 export default {
   components: {
     LayoutComponent,
   },
-  methods: {
-    setLayout,
-  },
-  created() {
-    this.LAYOUTS = LAYOUTS;
+  setup() {
+    const { setLayout, LAYOUTS } = useLayout();
+    return {
+      setLayout,
+      LAYOUTS,
+    };
   },
 };
 </script>

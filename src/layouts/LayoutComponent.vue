@@ -13,21 +13,24 @@
 </template>
 
 <script>
-import { layoutComputed, LAYOUTS } from "./services/pageLayoutService.js";
+import { computed } from "vue";
 import StandardLayout from "./components/StandardLayout";
 import AuthLayout from "./components/AuthLayout";
-
-const layoutComponents = {
-  [LAYOUTS.standard]: StandardLayout,
-  [LAYOUTS.auth]: AuthLayout,
-};
+import { useLayout } from "./composables/useLayout";
 
 export default {
-  computed: {
-    ...layoutComputed,
-    currentLayoutComponent() {
-      return layoutComponents[this.layout];
-    },
+  setup() {
+    const { layout, LAYOUTS } = useLayout();
+    const layoutComponents = {
+      [LAYOUTS.standard]: StandardLayout,
+      [LAYOUTS.auth]: AuthLayout,
+    };
+    const currentLayoutComponent = computed(
+      () => layoutComponents[layout.value]
+    );
+    return {
+      currentLayoutComponent,
+    };
   },
 };
 </script>
