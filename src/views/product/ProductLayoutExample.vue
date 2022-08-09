@@ -17,10 +17,12 @@
 
 <script>
 import { computed } from "vue";
-import ProductLayout from "@/layouts/ProductLayout";
-import { useProductLayout } from "@/layouts/composables/useProductLayout";
-import ProductGridCard from "./components/ProductGridCard";
-import ProductListCard from "./components/ProductListCard";
+import {
+  ProductLayout,
+  useProductLayout,
+} from "@/views/product/composables/useProductLayout.js";
+import ProductGridCard from "./components/ProductGridCard.vue";
+import ProductListCard from "./components/ProductListCard.vue";
 import products from "./products.json";
 
 export default {

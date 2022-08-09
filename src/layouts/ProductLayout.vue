@@ -11,23 +11,19 @@
 </template>
 
 <script>
-import { computed } from "vue";
-import GridLayout from "./components/GridLayout";
-import ListLayout from "./components/ListLayout";
-import { useProductLayout, LAYOUTS } from "./composables/useProductLayout";
-
-const layoutComponents = {
-  [LAYOUTS.grid]: GridLayout,
-  [LAYOUTS.list]: ListLayout,
-};
-
 export default {
-  setup() {
-    const { layout } = useProductLayout();
-    const currentLayoutComponent = computed(
-      () => layoutComponents[layout.value]
-    );
-    return { layout, currentLayoutComponent };
+  props: {
+    useLayout: {
+      type: Function,
+      required: true,
+    },
+  },
+  setup(props) {
+    const { layout, currentLayoutComponent } = props.useLayout();
+    return {
+      layout,
+      currentLayoutComponent,
+    };
   },
 };
 </script>
