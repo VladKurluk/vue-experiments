@@ -5,6 +5,7 @@
         Layout standard
       </button>
       <button @click.prevent="setLayout(LAYOUTS.auth)">Layout auth</button>
+      <router-link to="/products">Products</router-link>
     </div>
     <layout-component class="mx-auto max-w-7xl">
       <template #header>

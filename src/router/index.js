@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import LayoutExample from "../views/LayoutExample.vue";
+import ProductLayoutExample from "@/views/product/ProductLayoutExample";
 
 const routes = [
   {
@@ -8,14 +9,9 @@ const routes = [
     component: LayoutExample,
   },
   {
-    path: "/layout/standard",
-    name: "LayoutStandard",
-    component: LayoutExample,
-  },
-  {
-    path: "/layout/auth",
-    name: "Home",
-    component: LayoutExample,
+    path: "/products",
+    name: "ProductLayoutExample",
+    component: ProductLayoutExample,
   },
 ];
 
