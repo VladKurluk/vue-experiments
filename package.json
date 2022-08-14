@@ -6,10 +6,12 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "vuex:create-module": "node scripts/generateVuexModule.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "lodash-es": "^4.17.21",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -27,6 +29,7 @@
     "@vue/vue3-jest": "^27.0.0-alpha.1",
     "autoprefixer": "^10.4.8",
     "babel-jest": "^27.0.6",
+    "chalk": "^4.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
