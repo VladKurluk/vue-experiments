@@ -1,9 +1,12 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div id="nav" class="container mx-auto">
+    <div class="flex space-x-4">
+      <router-link to="/">Home</router-link>
+      <router-link to="/moderator">Moderator</router-link>
+      <router-link to="/admin">Admin</router-link>
+    </div>
+    <router-view />
+  </div>
 </template>
 
 <style lang="scss">
