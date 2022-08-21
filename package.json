@@ -10,6 +10,7 @@
     "vuex:create-module": "node scripts/generateVuexModule.js"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "lodash-es": "^4.17.21",
     "vue": "^3.2.13",
