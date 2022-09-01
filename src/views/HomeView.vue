@@ -1,10 +1,7 @@
 <template>
   <div class="home flex-initial justify-center flex-col items-center">
-    <img class="mx-auto" alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-
     <Form
-      class="px-4 mt-2 w-52"
+      class="px-4 mt-2 w-1/4 mx-auto"
       @submit="onSubmit"
       :validation-schema="schema"
       @invalid-submit="onInvalidSubmit"
@@ -22,7 +19,7 @@
       <Field
         name="password"
         type="password"
-        class="border border-blue-600 mt-2"
+        class="inline-flex w-full border border-blue-600 mt-2"
       />
 
       <button class="border border-blue-600 px-5 py-2 rounded-lg mt-5">
@@ -33,18 +30,13 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import SelectField from "@/components/SelectField.vue";
-
 import { Form, Field } from "vee-validate";
-
 import * as yup from "yup";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
     SelectField,
     Form,
     Field,
