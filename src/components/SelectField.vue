@@ -8,7 +8,7 @@
       @deselect="removeSelectedOption"
       @clear="removeSelectedOption"
     />
-    <slot name="validation-field" />
+    <slot name="validation-field" :selectedValue="value" />
   </div>
 </template>
 
